@@ -1,0 +1,36 @@
+{
+  "name": "i-love-youtube",
+  "version": "1.0.0",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "bootstrap": "5.0.0-beta1",
+    "get-json": "1.0.1",
+    "node-sass": "^4.14.1",
+    "overlayscrollbars": "1.13.1",
+    "overlayscrollbars-react": "0.2.2",
+    "react": "17.0.0",
+    "react-bootstrap": "1.4.0",
+    "react-dom": "17.0.0",
+    "react-scripts": "3.4.3",
+    "react-youtube": "7.13.0"
+  },
+  "devDependencies": {
+    "typescript": "3.8.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
