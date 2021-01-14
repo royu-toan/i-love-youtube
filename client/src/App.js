@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 // Import plugins
-import getJSON from "get-json";
+import axios from "axios";
 
 // Import components
 import SearchVideo from "./Components/SearchVideo";
@@ -26,22 +26,32 @@ const App = () => {
 
   useEffect(() => {
     if (videoID !== "") {
-      let URL = `https://www.googleapis.com/youtube/v3/videos?id=${videoID}&key=${apikey.key}&fields=items(id,snippet(channelId,title,categoryId),statistics)&part=snippet,statistics`;
-      getJSON(URL, (err, res) => {
-        setVideoInfo({
-          viewCount: res.items[0].statistics.viewCount
-            .toString()
-            .replace(/\B(?=(\d{3})+(?!\d))/g, ","),
-          likeCount: res.items[0].statistics.likeCount
-            .toString()
-            .replace(/\B(?=(\d{3})+(?!\d))/g, ","),
-          dislikeCount: res.items[0].statistics.dislikeCount
-            .toString()
-            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      let URL = "https://www.googleapis.com/youtube/v3/videos";
+      axios
+        .get(URL, {
+          params: {
+            id: videoID,
+            key: apikey.key,
+            fields: "items(id,snippet(channelId,title,categoryId),statistics)",
+            part: "snippet,statistics"
+          }
+        })
+        .then((res) => {
+          const info = res.data.items[0];
+          setVideoInfo({
+            viewCount: info.statistics.viewCount
+              .toString()
+              .replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+            likeCount: info.statistics.likeCount
+              .toString()
+              .replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+            dislikeCount: info.statistics.dislikeCount
+              .toString()
+              .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+          });
         });
-      });
     }
-  });
+  }, [videoID]);
 
   const getVideoID = (id) => {
     setVideoID(id);
