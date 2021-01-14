@@ -116,7 +116,10 @@ const SearchVideo = (props) => {
         .then(
           (reponsive) => {
             const body = JSON.parse(reponsive.body);
-            const items = body.items.map((item) => ({
+            const filters = body.items.filter(
+              (item) => item.id.kind !== "youtube#channel"
+            );
+            const items = filters.map((item) => ({
               id: item.id.videoId,
               title: item.snippet.title,
               channelTitle: item.snippet.channelTitle,

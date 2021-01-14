@@ -1,12 +1,13 @@
 {
   "name": "i-love-youtube",
   "version": "1.0.0",
+  "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "axios": "0.21.1",
     "bootstrap": "5.0.0-beta1",
-    "get-json": "1.0.1",
-    "node-sass": "^4.14.1",
+    "node-sass": "4.14.1",
     "overlayscrollbars": "1.13.1",
     "overlayscrollbars-react": "0.2.2",
     "react": "17.0.0",
@@ -29,8 +30,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  ]
 }
