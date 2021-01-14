@@ -10,6 +10,8 @@ This app use to search, view video's info and watch video from Youtube.
 
 Download source and run below commands in cmd
 
+Develop in folder ```client```
+
 ```bash
 npm run install
 ```
