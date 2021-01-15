@@ -1,6 +1,6 @@
 # I Love Youtube 🥰
 
-This app use to search, view video's info and watch video from Youtube.
+This application use to search, view video's info and watch video from Youtube.
 
 ## View deployment
 
